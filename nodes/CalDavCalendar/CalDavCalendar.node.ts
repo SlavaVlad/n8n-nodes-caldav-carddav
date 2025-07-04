@@ -165,3 +165,5 @@ export class CalDavCalendar implements INodeType {
 		return [returnData];
 	}
 }
+
+export default CalDavCalendar;
