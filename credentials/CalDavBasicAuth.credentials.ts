@@ -15,13 +15,13 @@ export class CalDavBasicAuth implements ICredentialType {
 			displayName: 'Server URL',
 			name: 'serverUrl',
 			type: 'string',
-			default: 'https://posteo.de:8443/calendars/max.muster/default',
+			default: 'https://calendar.com/calendars/username/canendarname/',
 		},
         {
             displayName: 'Username',
             name: 'username',
             type: 'string',
-            default: 'max.muster@posteo.de',
+            default: 'username@email.com',
         },
         {
             displayName: 'Password',

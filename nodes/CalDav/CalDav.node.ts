@@ -1,15 +1,12 @@
 /* eslint-disable n8n-nodes-base/node-class-description-credentials-name-unsuffixed */
 
 import {
-	IExecuteFunctions,
-} from 'n8n-core';
-
-import {
     ILoadOptionsFunctions,
 	INodeExecutionData,
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
+	IExecuteFunctions
 } from 'n8n-workflow';
 
 import {
@@ -71,7 +68,7 @@ export class CalDav implements INodeType {
 			): Promise<INodePropertyOptions[]> {
 				const returnData: INodePropertyOptions[] = [];
 				const calendars = await getCalendars.call(this);
-                
+
                 for (const calendar of calendars) {
                     returnData.push({
                         name: calendar.displayName as string,
@@ -110,6 +107,6 @@ export class CalDav implements INodeType {
             }
         }
 
-        return this.prepareOutputData(results);        
+        return this.prepareOutputData(results);
     }
 }

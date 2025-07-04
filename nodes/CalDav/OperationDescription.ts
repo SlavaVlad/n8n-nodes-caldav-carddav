@@ -15,7 +15,9 @@ export const operationFields: INodeProperties[] = [
             show: {
                 resource: [
                     'calendar',
-                    'event'
+                    'event',
+                    'addressBook',
+                    'contact'
                 ],
             },
         },
@@ -23,7 +25,7 @@ export const operationFields: INodeProperties[] = [
             {
                 name: 'Get Many',
                 value: 'getMany',
-                action: 'Get multiple available calendars',
+                action: 'Get multiple available items',
             },
         ],
         default: 'getMany',
@@ -48,6 +50,27 @@ export const operationFields: INodeProperties[] = [
         },
         default: '',
         description: 'The calendar to fetch events from',
+        required: true,
+    },
+    {
+        displayName: 'Address Book',
+        name: 'addressBook',
+        type: 'options',
+        typeOptions: {
+            loadOptionsMethod: 'getAddressBooks',
+        },
+        displayOptions: {
+            show: {
+                resource: [
+                    'contact'
+                ],
+                operation: [
+                    'getMany'
+                ],
+            },
+        },
+        default: '',
+        description: 'The address book to fetch contacts from',
         required: true,
     },
     {
